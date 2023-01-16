@@ -40,8 +40,8 @@ var Module = typeof Module != 'undefined' ? Module : {};
         // web worker
         PACKAGE_PATH = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf('/')) + '/');
       }
-      var PACKAGE_NAME = 'rain.data';
-      var REMOTE_PACKAGE_BASE = 'rain.data';
+      var PACKAGE_NAME = 'zoldo.data';
+      var REMOTE_PACKAGE_BASE = 'zoldo.data';
       if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
         Module['locateFile'] = Module['locateFilePackage'];
         err('warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)');
@@ -173,10 +173,10 @@ Module['FS_createPath']("/res", "entities", true, true);
           var files = metadata['files'];
           for (var i = 0; i < files.length; ++i) {
             DataRequest.prototype.requests[files[i].filename].onload();
-          }          Module['removeRunDependency']('datafile_rain.data');
+          }          Module['removeRunDependency']('datafile_zoldo.data');
 
       };
-      Module['addRunDependency']('datafile_rain.data');
+      Module['addRunDependency']('datafile_zoldo.data');
 
       if (!Module.preloadResults) Module.preloadResults = {};
 
@@ -1218,7 +1218,7 @@ function createExportWrapper(name, fixedasm) {
 }
 
 var wasmBinaryFile;
-  wasmBinaryFile = 'rain.wasm';
+  wasmBinaryFile = 'zoldo.wasm';
   if (!isDataURI(wasmBinaryFile)) {
     wasmBinaryFile = locateFile(wasmBinaryFile);
   }
@@ -9057,8 +9057,8 @@ var ___cxa_is_pointer_type = Module["___cxa_is_pointer_type"] = createExportWrap
 /** @type {function(...*):?} */
 var dynCall_jiji = Module["dynCall_jiji"] = createExportWrapper("dynCall_jiji");
 
-var ___start_em_js = Module['___start_em_js'] = 96372;
-var ___stop_em_js = Module['___stop_em_js'] = 96447;
+var ___start_em_js = Module['___start_em_js'] = 96388;
+var ___stop_em_js = Module['___stop_em_js'] = 96463;
 
 
 
