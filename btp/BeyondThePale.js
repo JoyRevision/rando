@@ -124,6 +124,7 @@ var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
       }
 Module['FS_createPath']("/", "res", true, true);
 Module['FS_createPath']("/res", "fonts", true, true);
+Module['FS_createPath']("/res", "html", true, true);
 Module['FS_createPath']("/res", "sprites", true, true);
 
       /** @constructor */
@@ -192,7 +193,7 @@ Module['FS_createPath']("/res", "sprites", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/res/fonts/romulus.png", "start": 0, "end": 2616}, {"filename": "/res/sprites/apollo-8x.png", "start": 2616, "end": 2943}, {"filename": "/res/sprites/player.png", "start": 2943, "end": 3076}], "remote_package_size": 3076});
+    loadPackage({"files": [{"filename": "/res/fonts/romulus.png", "start": 0, "end": 2616}, {"filename": "/res/html/BeyondThePale.html", "start": 2616, "end": 3514}, {"filename": "/res/sprites/apollo-8x.png", "start": 3514, "end": 3841}, {"filename": "/res/sprites/player.png", "start": 3841, "end": 3974}], "remote_package_size": 3974});
 
   })();
 
@@ -1179,40 +1180,40 @@ function dbg(text) {
 // === Body ===
 
 var ASM_CONSTS = {
-  89460: () => { if (document.fullscreenElement) return 1; },  
- 89506: () => { return document.getElementById('canvas').width; },  
- 89558: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 89626: () => { document.exitFullscreen(); },  
- 89653: () => { setTimeout(function() { Module.requestFullscreen(false, false); }, 100); },  
- 89726: () => { if (document.fullscreenElement) return 1; },  
- 89772: () => { return document.getElementById('canvas').width; },  
- 89824: () => { return screen.width; },  
- 89849: () => { document.exitFullscreen(); },  
- 89876: () => { setTimeout(function() { Module.requestFullscreen(false, true); setTimeout(function() { canvas.style.width="unset"; }, 100); }, 100); },  
- 90009: () => { if (document.fullscreenElement) return 1; },  
- 90055: () => { return document.getElementById('canvas').width; },  
- 90107: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 90175: () => { if (document.fullscreenElement) return 1; },  
- 90221: () => { return document.getElementById('canvas').width; },  
- 90273: () => { return screen.width; },  
- 90298: () => { if (document.fullscreenElement) return 1; },  
- 90344: () => { return document.getElementById('canvas').width; },  
- 90396: () => { return screen.width; },  
- 90421: () => { document.exitFullscreen(); },  
- 90448: () => { if (document.fullscreenElement) return 1; },  
- 90494: () => { return document.getElementById('canvas').width; },  
- 90546: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 90614: () => { document.exitFullscreen(); },  
- 90641: () => { return screen.width; },  
- 90666: () => { return screen.height; },  
- 90692: () => { return window.screenX; },  
- 90719: () => { return window.screenY; },  
- 90746: ($0) => { navigator.clipboard.writeText(UTF8ToString($0)); },  
- 90799: ($0) => { document.getElementById("canvas").style.cursor = UTF8ToString($0); },  
- 90870: () => { document.getElementById('canvas').style.cursor = 'none'; },  
- 90927: ($0) => { document.getElementById('canvas').style.cursor = UTF8ToString($0); },  
- 90998: () => { if (document.fullscreenElement) return 1; },  
- 91044: () => { if (document.pointerLockElement) return 1; }
+  5266836: () => { if (document.fullscreenElement) return 1; },  
+ 5266882: () => { return document.getElementById('canvas').width; },  
+ 5266934: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 5267002: () => { document.exitFullscreen(); },  
+ 5267029: () => { setTimeout(function() { Module.requestFullscreen(false, false); }, 100); },  
+ 5267102: () => { if (document.fullscreenElement) return 1; },  
+ 5267148: () => { return document.getElementById('canvas').width; },  
+ 5267200: () => { return screen.width; },  
+ 5267225: () => { document.exitFullscreen(); },  
+ 5267252: () => { setTimeout(function() { Module.requestFullscreen(false, true); setTimeout(function() { canvas.style.width="unset"; }, 100); }, 100); },  
+ 5267385: () => { if (document.fullscreenElement) return 1; },  
+ 5267431: () => { return document.getElementById('canvas').width; },  
+ 5267483: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 5267551: () => { if (document.fullscreenElement) return 1; },  
+ 5267597: () => { return document.getElementById('canvas').width; },  
+ 5267649: () => { return screen.width; },  
+ 5267674: () => { if (document.fullscreenElement) return 1; },  
+ 5267720: () => { return document.getElementById('canvas').width; },  
+ 5267772: () => { return screen.width; },  
+ 5267797: () => { document.exitFullscreen(); },  
+ 5267824: () => { if (document.fullscreenElement) return 1; },  
+ 5267870: () => { return document.getElementById('canvas').width; },  
+ 5267922: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 5267990: () => { document.exitFullscreen(); },  
+ 5268017: () => { return screen.width; },  
+ 5268042: () => { return screen.height; },  
+ 5268068: () => { return window.screenX; },  
+ 5268095: () => { return window.screenY; },  
+ 5268122: ($0) => { navigator.clipboard.writeText(UTF8ToString($0)); },  
+ 5268175: ($0) => { document.getElementById("canvas").style.cursor = UTF8ToString($0); },  
+ 5268246: () => { document.getElementById('canvas').style.cursor = 'none'; },  
+ 5268303: ($0) => { document.getElementById('canvas').style.cursor = UTF8ToString($0); },  
+ 5268374: () => { if (document.fullscreenElement) return 1; },  
+ 5268420: () => { if (document.pointerLockElement) return 1; }
 };
 function GetWindowInnerWidth() { return window.innerWidth; }
 function GetWindowInnerHeight() { return window.innerHeight; }
@@ -7006,7 +7007,7 @@ function GetWindowInnerHeight() { return window.innerHeight; }
       checkStackCookie();
       if (e instanceof WebAssembly.RuntimeError) {
         if (_emscripten_stack_get_current() <= 0) {
-          err('Stack overflow detected.  You can try increasing -sSTACK_SIZE (currently set to 65536)');
+          err('Stack overflow detected.  You can try increasing -sSTACK_SIZE (currently set to 5242880)');
         }
       }
       quit_(1, e);
@@ -10142,8 +10143,8 @@ var stackAlloc = createExportWrapper('stackAlloc');
 var _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports['emscripten_stack_get_current'])();
 var ___cxa_is_pointer_type = createExportWrapper('__cxa_is_pointer_type');
 var dynCall_jiji = Module['dynCall_jiji'] = createExportWrapper('dynCall_jiji');
-var ___start_em_js = Module['___start_em_js'] = 91091;
-var ___stop_em_js = Module['___stop_em_js'] = 91164;
+var ___start_em_js = Module['___start_em_js'] = 5268467;
+var ___stop_em_js = Module['___stop_em_js'] = 5268540;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
