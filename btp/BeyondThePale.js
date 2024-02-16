@@ -193,7 +193,7 @@ Module['FS_createPath']("/res", "sprites", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/res/fonts/romulus.png", "start": 0, "end": 2616}, {"filename": "/res/html/BeyondThePale.html", "start": 2616, "end": 3514}, {"filename": "/res/sprites/apollo-8x.png", "start": 3514, "end": 3841}, {"filename": "/res/sprites/player.png", "start": 3841, "end": 3974}], "remote_package_size": 3974});
+    loadPackage({"files": [{"filename": "/res/fonts/romulus.png", "start": 0, "end": 2616}, {"filename": "/res/html/BeyondThePale.html", "start": 2616, "end": 3514}, {"filename": "/res/sprites/apollo-8x.png", "start": 3514, "end": 3841}, {"filename": "/res/sprites/boomerang.png", "start": 3841, "end": 3970}, {"filename": "/res/sprites/player.png", "start": 3970, "end": 4103}], "remote_package_size": 4103});
 
   })();
 
@@ -1180,40 +1180,40 @@ function dbg(text) {
 // === Body ===
 
 var ASM_CONSTS = {
-  5266836: () => { if (document.fullscreenElement) return 1; },  
- 5266882: () => { return document.getElementById('canvas').width; },  
- 5266934: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 5267002: () => { document.exitFullscreen(); },  
- 5267029: () => { setTimeout(function() { Module.requestFullscreen(false, false); }, 100); },  
- 5267102: () => { if (document.fullscreenElement) return 1; },  
- 5267148: () => { return document.getElementById('canvas').width; },  
- 5267200: () => { return screen.width; },  
- 5267225: () => { document.exitFullscreen(); },  
- 5267252: () => { setTimeout(function() { Module.requestFullscreen(false, true); setTimeout(function() { canvas.style.width="unset"; }, 100); }, 100); },  
- 5267385: () => { if (document.fullscreenElement) return 1; },  
- 5267431: () => { return document.getElementById('canvas').width; },  
- 5267483: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 5267551: () => { if (document.fullscreenElement) return 1; },  
- 5267597: () => { return document.getElementById('canvas').width; },  
- 5267649: () => { return screen.width; },  
- 5267674: () => { if (document.fullscreenElement) return 1; },  
- 5267720: () => { return document.getElementById('canvas').width; },  
- 5267772: () => { return screen.width; },  
- 5267797: () => { document.exitFullscreen(); },  
- 5267824: () => { if (document.fullscreenElement) return 1; },  
- 5267870: () => { return document.getElementById('canvas').width; },  
- 5267922: () => { return parseInt(document.getElementById('canvas').style.width); },  
- 5267990: () => { document.exitFullscreen(); },  
- 5268017: () => { return screen.width; },  
- 5268042: () => { return screen.height; },  
- 5268068: () => { return window.screenX; },  
- 5268095: () => { return window.screenY; },  
- 5268122: ($0) => { navigator.clipboard.writeText(UTF8ToString($0)); },  
- 5268175: ($0) => { document.getElementById("canvas").style.cursor = UTF8ToString($0); },  
- 5268246: () => { document.getElementById('canvas').style.cursor = 'none'; },  
- 5268303: ($0) => { document.getElementById('canvas').style.cursor = UTF8ToString($0); },  
- 5268374: () => { if (document.fullscreenElement) return 1; },  
- 5268420: () => { if (document.pointerLockElement) return 1; }
+  5266868: () => { if (document.fullscreenElement) return 1; },  
+ 5266914: () => { return document.getElementById('canvas').width; },  
+ 5266966: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 5267034: () => { document.exitFullscreen(); },  
+ 5267061: () => { setTimeout(function() { Module.requestFullscreen(false, false); }, 100); },  
+ 5267134: () => { if (document.fullscreenElement) return 1; },  
+ 5267180: () => { return document.getElementById('canvas').width; },  
+ 5267232: () => { return screen.width; },  
+ 5267257: () => { document.exitFullscreen(); },  
+ 5267284: () => { setTimeout(function() { Module.requestFullscreen(false, true); setTimeout(function() { canvas.style.width="unset"; }, 100); }, 100); },  
+ 5267417: () => { if (document.fullscreenElement) return 1; },  
+ 5267463: () => { return document.getElementById('canvas').width; },  
+ 5267515: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 5267583: () => { if (document.fullscreenElement) return 1; },  
+ 5267629: () => { return document.getElementById('canvas').width; },  
+ 5267681: () => { return screen.width; },  
+ 5267706: () => { if (document.fullscreenElement) return 1; },  
+ 5267752: () => { return document.getElementById('canvas').width; },  
+ 5267804: () => { return screen.width; },  
+ 5267829: () => { document.exitFullscreen(); },  
+ 5267856: () => { if (document.fullscreenElement) return 1; },  
+ 5267902: () => { return document.getElementById('canvas').width; },  
+ 5267954: () => { return parseInt(document.getElementById('canvas').style.width); },  
+ 5268022: () => { document.exitFullscreen(); },  
+ 5268049: () => { return screen.width; },  
+ 5268074: () => { return screen.height; },  
+ 5268100: () => { return window.screenX; },  
+ 5268127: () => { return window.screenY; },  
+ 5268154: ($0) => { navigator.clipboard.writeText(UTF8ToString($0)); },  
+ 5268207: ($0) => { document.getElementById("canvas").style.cursor = UTF8ToString($0); },  
+ 5268278: () => { document.getElementById('canvas').style.cursor = 'none'; },  
+ 5268335: ($0) => { document.getElementById('canvas').style.cursor = UTF8ToString($0); },  
+ 5268406: () => { if (document.fullscreenElement) return 1; },  
+ 5268452: () => { if (document.pointerLockElement) return 1; }
 };
 function GetWindowInnerWidth() { return window.innerWidth; }
 function GetWindowInnerHeight() { return window.innerHeight; }
@@ -10143,8 +10143,8 @@ var stackAlloc = createExportWrapper('stackAlloc');
 var _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports['emscripten_stack_get_current'])();
 var ___cxa_is_pointer_type = createExportWrapper('__cxa_is_pointer_type');
 var dynCall_jiji = Module['dynCall_jiji'] = createExportWrapper('dynCall_jiji');
-var ___start_em_js = Module['___start_em_js'] = 5268467;
-var ___stop_em_js = Module['___stop_em_js'] = 5268540;
+var ___start_em_js = Module['___start_em_js'] = 5268499;
+var ___stop_em_js = Module['___stop_em_js'] = 5268572;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
