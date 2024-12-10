@@ -6849,9 +6849,9 @@ function GetWindowInnerHeight() { return window.innerHeight; }
       }
     };
   
-  var _emscripten_set_main_loop = (func, fps, simulateInfiniteLoop) => {
-      var iterFunc = getWasmTableEntry(func);
-      setMainLoop(iterFunc, fps, simulateInfiniteLoop);
+  var _emscripten_set_main_loop_arg = (func, arg, fps, simulateInfiniteLoop) => {
+      var iterFunc = () => getWasmTableEntry(func)(arg);
+      setMainLoop(iterFunc, fps, simulateInfiniteLoop, arg);
     };
 
   
@@ -7609,6 +7609,10 @@ function GetWindowInnerHeight() { return window.innerHeight; }
     return e.errno;
   }
   }
+
+
+
+
 
 
 
@@ -8782,6 +8786,8 @@ function GetWindowInnerHeight() { return window.innerHeight; }
 
   var _glfwDefaultWindowHints = () => GLFW.defaultWindowHints();
 
+  var _glfwDestroyWindow = (winid) => GLFW.destroyWindow(winid);
+
   var _glfwGetPrimaryMonitor = () => 1;
 
   var _glfwGetTime = () => GLFW.getTime() - GLFW.initialTime;
@@ -9368,7 +9374,7 @@ var wasmImports = {
   /** @export */
   emscripten_set_gamepaddisconnected_callback_on_thread: _emscripten_set_gamepaddisconnected_callback_on_thread,
   /** @export */
-  emscripten_set_main_loop: _emscripten_set_main_loop,
+  emscripten_set_main_loop_arg: _emscripten_set_main_loop_arg,
   /** @export */
   emscripten_set_resize_callback_on_thread: _emscripten_set_resize_callback_on_thread,
   /** @export */
@@ -9430,13 +9436,21 @@ var wasmImports = {
   /** @export */
   glCullFace: _glCullFace,
   /** @export */
+  glDeleteBuffers: _glDeleteBuffers,
+  /** @export */
   glDeleteProgram: _glDeleteProgram,
+  /** @export */
+  glDeleteShader: _glDeleteShader,
   /** @export */
   glDeleteTextures: _glDeleteTextures,
   /** @export */
   glDepthFunc: _glDepthFunc,
   /** @export */
+  glDetachShader: _glDetachShader,
+  /** @export */
   glDisable: _glDisable,
+  /** @export */
+  glDisableVertexAttribArray: _glDisableVertexAttribArray,
   /** @export */
   glDrawArrays: _glDrawArrays,
   /** @export */
@@ -9508,6 +9522,8 @@ var wasmImports = {
   /** @export */
   glfwDefaultWindowHints: _glfwDefaultWindowHints,
   /** @export */
+  glfwDestroyWindow: _glfwDestroyWindow,
+  /** @export */
   glfwGetPrimaryMonitor: _glfwGetPrimaryMonitor,
   /** @export */
   glfwGetTime: _glfwGetTime,
@@ -9563,7 +9579,7 @@ var __emscripten_stack_restore = (a0) => (__emscripten_stack_restore = wasmExpor
 var __emscripten_stack_alloc = (a0) => (__emscripten_stack_alloc = wasmExports['_emscripten_stack_alloc'])(a0);
 var _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports['emscripten_stack_get_current'])();
 var dynCall_jiji = Module['dynCall_jiji'] = createExportWrapper('dynCall_jiji', 5);
-var ___emscripten_embedded_file_data = Module['___emscripten_embedded_file_data'] = 5267756;
+var ___emscripten_embedded_file_data = Module['___emscripten_embedded_file_data'] = 5267900;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
