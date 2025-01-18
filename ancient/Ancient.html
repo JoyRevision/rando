@@ -11,6 +11,7 @@
   <!-- Create the canvas that the C++ code will draw into -->
   <div class="center">
     <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    <p>&larr; &rarr; &uarr; &darr; to move, 'z' to place and remove flags</p>
   </div>
 
   <!-- Allow the C++ to access the canvas element -->
@@ -34,10 +35,17 @@
       justify-content: center;
       width: 100%;
       padding: 20px 0px;
+      flex-direction: column;
     }
 
     canvas {
       border-radius: 5px;
+    }
+
+    p {
+      color: white;
+      font-family: monospace;
+      font-size: 24px;
     }
   </style>
 
