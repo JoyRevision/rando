@@ -7678,6 +7678,9 @@ function GetWindowInnerHeight() { return window.innerHeight; }
 
 
 
+
+
+
   
   
   
@@ -9446,7 +9449,11 @@ var wasmImports = {
   /** @export */
   glDeleteBuffers: _glDeleteBuffers,
   /** @export */
+  glDeleteFramebuffers: _glDeleteFramebuffers,
+  /** @export */
   glDeleteProgram: _glDeleteProgram,
+  /** @export */
+  glDeleteRenderbuffers: _glDeleteRenderbuffers,
   /** @export */
   glDeleteShader: _glDeleteShader,
   /** @export */
@@ -9485,6 +9492,8 @@ var wasmImports = {
   glGetAttribLocation: _glGetAttribLocation,
   /** @export */
   glGetFloatv: _glGetFloatv,
+  /** @export */
+  glGetFramebufferAttachmentParameteriv: _glGetFramebufferAttachmentParameteriv,
   /** @export */
   glGetProgramInfoLog: _glGetProgramInfoLog,
   /** @export */
@@ -9603,7 +9612,7 @@ var __emscripten_stack_restore = (a0) => (__emscripten_stack_restore = wasmExpor
 var __emscripten_stack_alloc = (a0) => (__emscripten_stack_alloc = wasmExports['_emscripten_stack_alloc'])(a0);
 var _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports['emscripten_stack_get_current'])();
 var dynCall_jiji = Module['dynCall_jiji'] = createExportWrapper('dynCall_jiji', 5);
-var ___emscripten_embedded_file_data = Module['___emscripten_embedded_file_data'] = 5263756;
+var ___emscripten_embedded_file_data = Module['___emscripten_embedded_file_data'] = 5266472;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
